@@ -1,0 +1,28 @@
+@media screen and (max-width: 479px) {
+    .performance-title {
+        font-size: 3rem;
+    }
+    .performance-list-title {
+        font-size: 2rem;
+    }
+    .profile-box .my-icon {
+        position: relative;
+        margin: auto;
+    }
+    .section-conteiner {
+        height: auto;
+    }
+    .profile-name,.profile-text,.profile-description {
+        text-align: center;
+    }
+    .profile-text {
+        font-size: 2rem;
+    }
+    .profile-name {
+        padding-bottom: 20px;
+    }
+    .sns-box {
+        display: flex;
+        justify-content: center;
+    }
+}

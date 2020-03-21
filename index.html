@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tech Fox</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="../vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-carousel-3d@0.2.0/dist/vue-carousel-3d.min.js"></script>
+    <script src="https://kit.fontawesome.com/b95426f8a8.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/sp.css">
+<body>
+    <main class="main-wrap">
+        <section class="section section-wrap js-section" data-section-name="section1" >
+            <div class="section-conteiner">
+                <div class="top-image">
+                    <h1 class="top-label">Tech Fox</h1>
+                    <p class="top-sub-label">SEI's Portfolio</p>
+                </div>
+            </div>
+        </section>
+        <section class="section section-wrap js-section" data-section-name="section2">
+            <div class="section-conteiner">
+                <div class="profile-box">
+                    <div class="my-icon"></div>
+                    <h2 class="profile-name">SEI</h2>
+                    <p class="profile-text">Student　age 15</p>
+                    <p class="profile-description">Django/FlaskでWebアプリを開発しています。<br>データサイエンティスト目指してもいます。</p>
+                    <div class="sns-box">
+                        <a href="https://github.com/Watson-Sei" class="sns-icon github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/sei_sei44134148" class="sns-icon twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://qiita.com/SEI_python" class="sns-icon qiita">
+                            <img src="image/Qiita-kun.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-wrap js-section" data-section-name="section3">
+            <div class="section-conteiner">
+                <div class="skill-box">
+                    <h2 class="skill-title">
+                        Skill
+                    </h2>
+                    <div id="app">
+                        <carousel-3d :controls-visible="true" :clickable="false" :autoplay="true" class="carousel-3d-card" ref="mycarousel" :count="slides.length">
+                            <slide v-for="(slide, i) in slides" :index="i" class="slide-card">
+                                <div class="python">
+                                    <div class="python-icon">
+                                        <img :src="slide.name">
+                                    </div>
+                                    <div class="circle">
+                                        <div v-bind:class="['wave wave-' + slide.percent]"></div>
+                                        <div class="value">{{ slide.percent }}%</div>
+                                    </div>
+                                </div>
+                            </slide>
+                        </carousel-3d>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-wrap js-section" data-section-name="section4">
+            <div class="section-conteiner">
+                <div class="performance-box">
+                    <h2 class="performance-title">
+                        Performance
+                    </h2>
+                    <div class="performance-list">
+                        <div class="performance-list-image"></div>
+                        <div class="performance-list-details">
+                            <h3 class="performance-list-title">Drone-Navigator</h3>
+                            <p class="performance-list-description">ドローン仲介サイト</p>
+                            <p class="performance-list-use-language">Django/HTML/CSS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <ul class="pager" id="js-pager"></ul>
+    </main>
+    <script src="./main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js" integrity="sha256-RGlAwHKG24hsj1109SGQgvR+Orx7u8c6zyYH4Tk3ydU=" crossorigin="anonymous"></script>
+    <script>
+        var $section = $('.js-section');
+        var $pager = $('#js-pager');
+
+        var option = {
+          section : '.js-section', // 対象を指定
+          easing: "swing", // イージングをしてい(jQueryのanimation)
+          scrollSpeed: 600, // スクロール時の速度
+          scrollbars: true, // スクロールバーを表示するか
+          before:function (index) {
+            pagerCurrent(index);
+          },
+          afterRender:function () {
+            createPager();
+          }
+        };
+        $(function() {
+          $.scrollify(option); // scrollifyの実行
+        });
+
+        function pagerCurrent(index = 0) {
+            var $li = $pager.find('li');
+            $li.removeClass('is-current');
+            $li.eq(index).addClass('is-current');
+        }
+
+        function createPager() {
+            $section.each(function (i, e) {
+                var sectionName = $(e).attr('data-section-name');
+                var addClass = '';
+                if (i === 0) {
+                    addClass = 'is-current';
+                }
+                var html = '';
+                html += '<li class="' +addClass + '">';
+                html += '<a href="#' + sectionName + '"></a>';
+                html += '</li>';
+                $pager.append(html);
+            });
+            pagerLink();
+        }
+
+        function pagerLink() {
+            $pager.find('a').on('click', function () {
+                $.scrollify.move($(this).attr("href"));
+            })
+        }
+    </script>
+</head>
+</body>
+</html>
+
+
+
+

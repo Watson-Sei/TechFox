@@ -1,0 +1,174 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Mitr&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 16px;
+  color: #DADADA;
+  font-family: 'Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif; }
+
+h1 {
+  font-size: 5.653rem; }
+
+h2, .profile-name {
+  font-size: 3.998rem;
+  font-family: 'Mitr', sans-serif; }
+
+h3, .profile-text {
+  font-size: 2.827rem;
+  font-family: 'Mitr', sans-serif; }
+
+h4, p.top-sub-label {
+  font-size: 1.999rem; }
+
+.main-wrap {
+  background: url("../image/background.jpg") no-repeat fixed;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative; }
+
+.section-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-size: 1.414rem; }
+
+.section-conteiner {
+  width: 1000px;
+  height: 700px;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.top-image {
+  background: url("../image/techfox_resize.png") no-repeat bottom right -40px;
+  background-size: 60%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 88px 80px; }
+
+.top-label {
+  color: #E69111; }
+
+p.top-sub-label {
+  color: #E69111; }
+
+.profile-box {
+  width: 80%;
+  margin: 0 auto;
+  padding: 88px 0;
+  position: relative; }
+  .profile-box .sns-box {
+    display: flex;
+    align-items: center; }
+    .profile-box .sns-box a {
+      margin-right: 10px; }
+    .profile-box .sns-box a.sns-icon {
+      background-color: #E69111;
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .profile-box .sns-box a.qiita img {
+      width: 32px;
+      height: 32px; }
+    .profile-box .sns-box a.github, .profile-box .sns-box .twitter {
+      font-size: 30px;
+      color: black; }
+    .profile-box .sns-box a.github:hover {
+      background-color: #DADADA; }
+    .profile-box .sns-box a.twitter:hover {
+      background-color: #DADADA; }
+    .profile-box .sns-box a.qiita:hover {
+      background-color: #DADADA; }
+
+.my-icon {
+  position: absolute;
+  border: 2px solid #DADADA;
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  right: 0;
+  background: url("../image/GG.jpg") no-repeat;
+  background-size: cover; }
+
+.profile-name {
+  font-style: italic;
+  font-weight: 700;
+  padding-bottom: 50px; }
+
+.profile-text {
+  font-style: italic;
+  padding-bottom: 15px; }
+
+.profile-description {
+  padding-bottom: 60px; }
+
+a {
+  color: #E69111;
+  text-decoration: none; }
+  a:hover {
+    color: #DADADA; }
+
+.skill-box {
+  padding: 88px 0; }
+  .skill-box .skill-title {
+    text-align: center; }
+  .skill-box .carousel-3d-container {
+    width: 98%;
+    height: 450px !important; }
+  .skill-box .carousel-3d-slider {
+    width: 250px !important;
+    height: 400px !important; }
+  .skill-box .carousel-3d-controls {
+    visibility: hidden; }
+  .skill-box .slide-card {
+    width: 250px !important;
+    height: 400px !important;
+    background-color: rgba(0, 0, 0, 0.5); }
+
+#app {
+  border-radius: 4px;
+  transition: all 0.2s; }
+
+.performance-box {
+  padding: 88px 0; }
+  .performance-box .performance-title {
+    text-align: center; }
+  .performance-box .performance-list {
+    width: 100%;
+    height: 500px; }
+  .performance-box .performance-list-image {
+    width: 70%;
+    height: 300px;
+    background: url("../image/performance-drone-navigator-image.png") no-repeat center;
+    background-size: cover;
+    margin: auto; }
+  .performance-box .performance-list-details {
+    padding-top: 10px;
+    text-align: center; }
+
+.pager {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 20px;
+  list-style: none; }
+  .pager a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 20px 0; }
+
+.is-current a {
+  background: #E69111; }
