@@ -19,8 +19,8 @@ new Vue({
             css_percent: '31.5%',
         },{
             name: 'https://cdn.svgporn.com/logos/go.svg',
-            percent: '2',
-            css_percent: '-2.1%',
+            percent: '30',
+            css_percent: '-31.5%',
         },{
             name: 'https://cdn.svgporn.com/logos/javascript.svg',
             percent: '30',
@@ -43,20 +43,36 @@ new Vue({
             css_percent: '-10%'
         },{
             name: 'https://cdn.svgporn.com/logos/docker-icon.svg',
-            percent: '20',
-            css_percent: '30.44%'
+            percent: '50',
+            css_percent: '-1.1%'
         },{
             name : 'https://cdn.svgporn.com/logos/figma.svg',
             percent: '50',
             css_percent: '-1.1%'
         },{
             name: 'https://cdn.svgporn.com/logos/vue.svg',
-            percent: '30',
-            css_percent: '31.5%'
+            percent: '50',
+            css_percent: '-1.1%'
         },{
             name: 'image/nakedssl-tran.png',
             percent: '90',
             css_percent: '-40%'
+        },{
+            name: 'image/aws.svg',
+            percent: '20',
+            css_percent: '30.44%'
+        },{
+            name: 'image/nuxt-icon.svg',
+            percent: '60',
+            css_percent: '-10%'
+        },{
+            name: 'image/ubuntu.svg',
+            percent: '30',
+            css_percent: '31.5%'
+        },{
+            name: 'image/icon-gin.svg',
+            percent: '30',
+            css_percent: '31.5%'
         }]
     },
     components: {
